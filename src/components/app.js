@@ -4,7 +4,9 @@ import { useState, useEffect } from 'react';
 
 const StyledDiv = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 
   .grid {
     display: flex;
@@ -23,16 +25,20 @@ const StyledDiv = styled.div`
   .result {
     margin-left: 20px;
     min-width: 100px;
-    background: #e7e7e7;
     display: flex;
     flex-direction: column;
 
     textarea {
+      background: #e7e7e7;
       resize: none;
-      background: none;
       border: 0;
       height: 100%;
     }
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -68,6 +74,14 @@ export default function App() {
 
   return (
     <StyledDiv>
+      <p>
+        Enter your expressions on the left and your results will display on the
+        right. Powered by{' '}
+        <a href="https://mathjs.org/index.html" target="_blank">
+          Math.js
+        </a>
+      </p>
+
       <div className="grid">
         <div className="expressions">
           Expressions: <br />

@@ -1,4 +1,4 @@
-# TODO project
+# Kevin Calculator project
 
 Do a global search for "TODO" and update names appropiately.
 
