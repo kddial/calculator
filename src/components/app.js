@@ -26,6 +26,8 @@ const StyledDiv = styled.div`
   }
 `;
 
+const mathJsScope = {};
+
 export default function App() {
   const [textArea, setTextArea] = useState('');
   const [resultArray, setResultArray] = useState([]);
@@ -43,9 +45,9 @@ export default function App() {
       }
       let result;
       try {
-        result = MathJS.evaluate(line);
+        result = MathJS.evaluate(line, mathJsScope);
       } catch (err) {
-        result = 'error';
+        result = '...';
       }
       return result;
     });
@@ -53,8 +55,6 @@ export default function App() {
     setResultArray(evaluatedLines);
     setResultTextArea(evaluatedLines.join('\n'));
   }, [textArea, setResultArray]);
-
-  console.log(resultArray);
 
   return (
     <StyledDiv>
@@ -66,7 +66,7 @@ export default function App() {
 
         <div className="result">
           Result:
-          <textarea value={resultTextArea} readonly />
+          <textarea value={resultTextArea} readOnly />
         </div>
       </div>
     </StyledDiv>
