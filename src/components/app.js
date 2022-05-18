@@ -7,8 +7,14 @@ const StyledDiv = styled.div`
     display: flex;
   }
 
+  textarea {
+    font-size: 18px;
+    line-height: 2;
+  }
+
   .expressions textarea {
     min-height: 400px;
+    min-width: 400px;
   }
 
   .result {
@@ -19,6 +25,7 @@ const StyledDiv = styled.div`
     flex-direction: column;
 
     textarea {
+      resize: none;
       background: none;
       border: 0;
       height: 100%;
@@ -29,8 +36,9 @@ const StyledDiv = styled.div`
 const mathJsScope = {};
 
 export default function App() {
-  const [textArea, setTextArea] = useState('');
-  const [resultArray, setResultArray] = useState([]);
+  const [textArea, setTextArea] = useState(
+    'wage = 12 \nhours = 40 \nwage * hours',
+  );
   const [resultTextArea, setResultTextArea] = useState('');
 
   function onTextAreaChange(event) {
@@ -52,9 +60,8 @@ export default function App() {
       return result;
     });
 
-    setResultArray(evaluatedLines);
     setResultTextArea(evaluatedLines.join('\n'));
-  }, [textArea, setResultArray]);
+  }, [textArea, setResultTextArea]);
 
   return (
     <StyledDiv>
