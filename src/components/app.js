@@ -3,6 +3,9 @@ import * as MathJS from 'mathjs';
 import { useState, useEffect } from 'react';
 
 const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+
   .grid {
     display: flex;
   }
