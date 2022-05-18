@@ -10,3 +10,6 @@ Project is setup with:
 - `yarn` package manager
 
 Run `yarn install` and `yarn dev` to start developing
+
+NOTES
+https://mathjs.org/examples/expressions.js.html

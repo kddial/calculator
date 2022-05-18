@@ -1,15 +1,37 @@
 import styled from 'styled-components/macro';
 import * as MathJS from 'mathjs';
-
-console.log(MathJS.evaluate('1+2'));
+import { useState } from 'react';
 
 const StyledDiv = styled.div`
-  width: 100px;
-  height: 100px;
-  background: pink;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.25));
+  .grid {
+    display: flex;
+  }
+
+  .result {
+    margin-left: 20px;
+    min-width: 100px;
+    background: #e7e7e7;
+  }
 `;
 
 export default function App() {
-  return <StyledDiv>kevin</StyledDiv>;
+  const [textArea, setTextArea] = useState('');
+  const [expressionArray, setExpressionArray] = useState([]);
+  const [resultArray, setResultArray] = useState([]);
+
+  function onTextAreaChange(event) {
+    setTextArea(event.target.value);
+  }
+
+  return (
+    <StyledDiv>
+      <div className="grid">
+        <div className="expressions">
+          Expressions: <br />
+          <textarea value={textArea} onChange={onTextAreaChange} />
+        </div>
+        <div className="result">Result:</div>
+      </div>
+    </StyledDiv>
+  );
 }
