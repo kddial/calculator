@@ -1,6 +1,12 @@
 # Kevin Calculator project
 
-Do a global search for "TODO" and update names appropiately.
+Calculator which evaluates expressions immediately. And can hold variables to be used by other expressions thanks to https://mathjs.org/examples/expressions.js.html
+
+## Demo
+
+https://calculator-kddial.netlify.app/
+
+## Building the project
 
 Project is setup with:
 
@@ -10,6 +16,3 @@ Project is setup with:
 - `yarn` package manager
 
 Run `yarn install` and `yarn dev` to start developing
-
-NOTES
-https://mathjs.org/examples/expressions.js.html
