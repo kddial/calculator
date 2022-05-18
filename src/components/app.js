@@ -1,4 +1,7 @@
 import styled from 'styled-components/macro';
+import * as MathJS from 'mathjs';
+
+console.log(MathJS.evaluate('1+2'));
 
 const StyledDiv = styled.div`
   width: 100px;
