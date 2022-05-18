@@ -77,7 +77,11 @@ export default function App() {
       <p>
         Enter your expressions on the left and your results will display on the
         right. Powered by{' '}
-        <a href="https://mathjs.org/index.html" target="_blank">
+        <a
+          href="https://mathjs.org/index.html"
+          target="_blank"
+          rel="noreferrer"
+        >
           Math.js
         </a>
       </p>
